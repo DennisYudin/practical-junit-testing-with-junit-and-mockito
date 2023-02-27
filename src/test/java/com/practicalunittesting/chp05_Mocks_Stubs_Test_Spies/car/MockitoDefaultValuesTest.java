@@ -18,9 +18,8 @@ public class MockitoDefaultValuesTest {
 
 	@Test
 	public void testDefaultBehaviourOfTestDouble() {
-		assertFalse("new test double should return false as boolean",
-				myFerrari.needsFuel());
-		assertEquals("new test double should return 0.0 as double",
-				0.0, myFerrari.getEngineTemperature());
+		assertFalse("new test double should return false as boolean", myFerrari.needsFuel());
+
+		assertEquals(0.0, myFerrari.getEngineTemperature(), 0.001);
 	}
 }

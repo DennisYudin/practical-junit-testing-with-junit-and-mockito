@@ -19,9 +19,13 @@ import static org.junit.Assert.assertEquals;
 public class ReadExcelTest {
 
 	@Test
-	@DataLoader(filePaths = {"com/practicalunittesting/chp06/excel/financial.xls"}, loaderType = LoaderType.EXCEL)
-	public void shouldCalculateDiscount(@Param(name="value") String value, @Param(name="discount")String discount) {
-		assertEquals(Double.parseDouble(discount),
-				DiscountCalculator.calculateDiscount(Double.parseDouble(value)), 0.0001);
+	@DataLoader(
+			filePaths = {"com/practicalunittesting/chp06/excel/financial.xls"},
+			loaderType = LoaderType.EXCEL)
+	public void shouldCalculateDiscount(@Param(name="value") String value,
+										@Param(name="discount")String discount) {
+		double expected = Double.parseDouble(discount);
+		double actual = DiscountCalculator.calculateDiscount(Double.parseDouble(value));
+		assertEquals(expected, actual, 0.0001);
 	}
 }

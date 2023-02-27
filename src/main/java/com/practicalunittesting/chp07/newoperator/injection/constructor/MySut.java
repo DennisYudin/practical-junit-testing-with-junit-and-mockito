@@ -9,11 +9,10 @@ import com.practicalunittesting.chp07.newoperator.MyCollaborator;
  * @author Tomek Kaczanowski
  */
 public class MySut {
-
 	private final MyCollaborator collab;
 
-	public MySut(MyCollaborator collab) {
-		this.collab = collab;
+	public MySut(MyCollaborator collaborator) {
+		this.collab = collaborator;
 	}
 
 	public void myMethod() {

@@ -1,14 +1,9 @@
-package com.practicalunittesting.chp07.capturingarguments.captor;
+package com.practicalunittesting.chp07.capturing_arguments;
 
-import com.practicalunittesting.chp07.capturingarguments.Calendar;
-import com.practicalunittesting.chp07.capturingarguments.Meeting;
-import com.practicalunittesting.chp07.capturingarguments.PIM;
 import org.junit.Test;
-import org.mockito.ArgumentCaptor;
 
 import java.util.Date;
 
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -29,13 +24,17 @@ public class PIMTest {
 	public void shouldAddNewEventToCalendar() {
 		Calendar calendar = mock(Calendar.class);
 		PIM pim = new PIM(calendar);
-		ArgumentCaptor<Meeting> argument = ArgumentCaptor.forClass(Meeting.class);
+		Meeting expectedMeeting = new Meeting(START_DATE, END_DATE);
 
 		pim.addMeeting(START_DATE, ONE_HOUR);
 
-		verify(calendar).addEvent(argument.capture());
-		Meeting meeting = argument.getValue();
-		assertEquals(START_DATE, meeting.getStartDate());
-		assertEquals(END_DATE, meeting.getEndDate());
+		verify(calendar).addEvent(expectedMeeting);
 	}
 }
+
+//    @Test(expectedExceptions = IllegalArgumentException.class)
+//    public void shouldRejectOneHourMeetings() {
+//        Meeting expectedMeeting = new Meeting(START_DATE, END_DATE);
+//        doThrow(IllegalArgumentException.class).when(calendar).addEvent(expectedMeeting);
+//        pim.addMeeting(START_DATE, ONE_HOUR);
+//    }

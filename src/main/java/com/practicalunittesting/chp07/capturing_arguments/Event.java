@@ -1,4 +1,4 @@
-package com.practicalunittesting.chp07.capturingarguments;
+package com.practicalunittesting.chp07.capturing_arguments;
 
 /**
  * Practical Unit Testing with JUnit and Mockito - source code for examples.
@@ -6,7 +6,5 @@ package com.practicalunittesting.chp07.capturingarguments;
  *
  * @author Tomek Kaczanowski
  */
-public interface Calendar {
-
-	public void addEvent(Event event);
+public interface Event {
 }

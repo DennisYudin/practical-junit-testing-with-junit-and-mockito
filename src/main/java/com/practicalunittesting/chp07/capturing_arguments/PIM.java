@@ -1,4 +1,4 @@
-package com.practicalunittesting.chp07.capturingarguments;
+package com.practicalunittesting.chp07.capturing_arguments;
 
 import java.util.Date;
 

@@ -19,13 +19,11 @@ public class MockitoReturningDesiredValuesTest {
 
 	@Test
 	public void testStubbing() {
-		assertFalse("new test double should return false as boolean",
-				myFerrari.needsFuel());
+		assertFalse("new test double should return false as boolean", myFerrari.needsFuel());
 
 		when(myFerrari.needsFuel()).thenReturn(true);
 
-		assertTrue("after instructed test double should return what we want",
-				myFerrari.needsFuel());
+		assertTrue("after instructed test double should return what we want", myFerrari.needsFuel());
 	}
 }
 

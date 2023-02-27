@@ -17,14 +17,12 @@ public class PrivateMethodReflectionTest {
 
 	@Test
 	public void testingPrivateMethodWithReflection()
-			throws NoSuchMethodException, InvocationTargetException,
-			IllegalAccessException {
+			throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 		SomeClass sut = new SomeClass();
 
 		Class[] parameterTypes = new Class[1];
 		parameterTypes[0] = java.lang.Long.class;
-		Method m = sut.getClass()
-				.getDeclaredMethod("privateMethod", parameterTypes);
+		Method m = sut.getClass().getDeclaredMethod("privateMethod", parameterTypes);
 		m.setAccessible(true);
 
 		Object[] parameters = new Object[1];

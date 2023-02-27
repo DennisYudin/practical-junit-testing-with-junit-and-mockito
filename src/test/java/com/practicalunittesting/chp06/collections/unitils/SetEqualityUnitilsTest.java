@@ -20,7 +20,7 @@ public class SetEqualityUnitilsTest {
 	private Set<String> setA, setB;
 
 	@Before
-	private void setUp() {
+	public void setUp() {
 		setA = new LinkedHashSet<String>();
 		setB = new LinkedHashSet<String>();
 
@@ -36,7 +36,7 @@ public class SetEqualityUnitilsTest {
 
 	@Test
 	public void twoSetsAreEqualsIfTheyHaveSameContentAndSameOrder() {
-		assertReflectionEquals(setA, setB);
+		assertReflectionEquals(setA, setB); //todo check order elements in sets
 	}
 
 	@Test

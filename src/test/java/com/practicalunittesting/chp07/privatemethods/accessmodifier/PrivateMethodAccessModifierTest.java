@@ -15,6 +15,7 @@ public class PrivateMethodAccessModifierTest {
 	@Test
 	public void testingPrivateMethodWithReflection() {
 		SomeClass sut = new SomeClass();
+
 		assertTrue(sut.privateMethod(9238423L));
 	}
 }

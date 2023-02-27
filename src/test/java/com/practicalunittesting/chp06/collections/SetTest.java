@@ -20,8 +20,8 @@ public class SetTest {
 
 	@Before
 	public void setUp() {
-		setA = new LinkedHashSet<String>();
-		setB = new LinkedHashSet<String>();
+		setA = new LinkedHashSet<>();
+		setB = new LinkedHashSet<>();
 	}
 
 	@Test
@@ -35,7 +35,6 @@ public class SetTest {
 		setB.add(s2);
 		setB.add(s1);
 
-		assertEquals(setA, setB);
+		assertEquals(setA, setB); //todo don't check order elements
 	}
-
 }

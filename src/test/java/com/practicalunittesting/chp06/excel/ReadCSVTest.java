@@ -19,9 +19,15 @@ import static org.junit.Assert.assertEquals;
 public class ReadCSVTest {
 
 	@Test
-	@DataLoader(filePaths = {"com/practicalunittesting/chp06/excel/financial.csv"}, loaderType = LoaderType.CSV)
-	public void shouldCalculateDiscount(@Param(name="value") String value, @Param(name="discount")String discount) {
-		assertEquals(Double.parseDouble(discount),
-				DiscountCalculator.calculateDiscount(Double.parseDouble(value)), 0.0001);
+	@DataLoader(
+			filePaths = {"com/practicalunittesting/chp06/excel/financial.csv"},
+			loaderType = LoaderType.CSV)
+	public void shouldCalculateDiscount(@Param(name="value") String value,
+										@Param(name="discount")String discount) {
+
+		double actual = DiscountCalculator.calculateDiscount(Double.parseDouble(value));
+		double expected = Double.parseDouble(discount);
+
+		assertEquals(expected, actual, 0.0001);
 	}
 }

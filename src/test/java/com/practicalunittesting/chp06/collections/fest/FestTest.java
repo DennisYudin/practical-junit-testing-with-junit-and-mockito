@@ -35,27 +35,45 @@ public class FestTest {
 
 	@Test
 	public void collectionsUtilityMethods() {
-		assertThat(setA).isNotEmpty().hasSize(2).doesNotHaveDuplicates();
-		assertThat(setA).containsOnly(s1, s2);
+		assertThat(setA)
+				.isNotEmpty()
+				.hasSize(2)
+				.doesNotHaveDuplicates();
+
+		assertThat(setA)
+				.containsOnly(s1, s2);
 	}
 
 	@Test
 	public void mapUtilityMethods() {
-		HashMap<String, Integer> map = new LinkedHashMap<String, Integer>();
+		HashMap<String, Integer> map = new LinkedHashMap<>();
 		map.put("a", 2);
 		map.put("b", 3);
-		assertThat(map).isNotNull().isNotEmpty()
-				.includes(entry("a", 2), entry("b", 3))
-				.excludes(entry("c", 1));
+
+		assertThat(map)
+				.isNotNull()
+				.isNotEmpty()
+				.includes(
+						entry("a", 2),
+						entry("b", 3))
+				.excludes(
+						entry("c", 1));
 	}
 
 	@Test
 	public void lookingIntoProperties() {
-		Collection<Book> books = new HashSet<Book>();
+		Collection<Book> books = new HashSet<>();
 		books.add(new Book("Homer", "Odyssey"));
 		books.add(new Book("J.R.R. Tolkien", "Hobbit"));
-		assertThat(books).onProperty("title").contains("Hobbit");
-		assertThat(books).onProperty("author").contains("J.R.R. Tolkien");
-		assertThat(books).onProperty("author").contains("J.K. Rownling");
+
+		assertThat(books)
+				.onProperty("title")
+				.contains("Hobbit");
+		assertThat(books)
+				.onProperty("author")
+				.contains("J.R.R. Tolkien");
+		assertThat(books)
+				.onProperty("author")
+				.contains("J.K. Rownling");
 	}
 }

@@ -14,12 +14,10 @@ import static org.junit.Assert.assertTrue;
 public class PrivateMethodPowermockTest {
 
 	@Test
-	public void testingPrivateMethodWithReflection()
-			throws Exception {
-		SomeClass sut = new SomeClass();
+	public void testingPrivateMethodWithReflection() throws Exception {
+		SomeClass methodForTest = new SomeClass();
 
-		Boolean result = Whitebox
-				.invokeMethod(sut, "privateMethod", 302483L);
+		Boolean result = Whitebox.invokeMethod(methodForTest, "privateMethod", 302483L);
 
 		assertTrue(result);
 	}

@@ -26,7 +26,10 @@ public class MySutTest {
 		MySut sut = new MySut();
 		MyCollaborator collaborator = mock(MyCollaborator.class);
 
-		PowerMockito.whenNew(MyCollaborator.class).withNoArguments().thenReturn(collaborator);
+		PowerMockito.whenNew(MyCollaborator.class)
+				.withNoArguments()
+				.thenReturn(collaborator);
+
 		when(collaborator.someMethod()).thenReturn(true);
 
 		assertTrue(sut.myMethod());

@@ -7,6 +7,12 @@ import junitparams.Parameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @RunWith(JUnitParamsRunner.class)
 public class StringReverserTest {
 
